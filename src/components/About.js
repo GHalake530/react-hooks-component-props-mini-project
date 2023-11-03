@@ -1,14 +1,14 @@
-import React from 'react'
-import blogData from "../data/blog"
+import React from 'react';
 
-function About(props) {
-    const image = "https://via.placeholder.com/215"
+const About = (props) => {
+  const { image, about } = props;
+
   return (
-        <aside>
-            <img src={props.image} alt="blog logo"/>
-            <p>{props.about}</p>
-        </aside>
-  )
-}
+    <aside>
+      <img src={image || "https://via.placeholder.com/215"} alt="blog logo" />
+      <p>{about}</p>
+    </aside>
+  );
+};
 
-export default About
+export default About;

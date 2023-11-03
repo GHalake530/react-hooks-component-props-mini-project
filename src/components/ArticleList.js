@@ -1,19 +1,22 @@
-import React from "react";
-import Article from "./Article";
+// ArticleList.js
+import React from 'react';
+import Article from './Article';
 
-function ArticleList(props) {
+const ArticleList = (props) => {
+  const { posts } = props;
+
   return (
     <main>
-      {props.articles.map((article, index) => (
+      {posts.map((post) => (
         <Article
-          key={index}
-          title={article.title}
-          date={article.date}
-          preview={article.preview}
+          key={post.id}
+          title={post.title}
+          date={post.date || "January 1, 1970"}
+          preview={post.preview}
         />
       ))}
     </main>
   );
-}
+};
 
 export default ArticleList;
